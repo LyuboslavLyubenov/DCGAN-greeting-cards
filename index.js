@@ -1,11 +1,11 @@
-import * as tf from '@tensorflow/tfjs';
+const tf = require('@tensorflow/tfjs');
 
 if (module.hot) {
     module.hot.accept();
 }
 
 async function generate() {
-    model = await tf.loadLayersModel('/model.json');
+    model = await tf.loadLayersModel('model.json');
     noise = tf.randomNormal([1, 50]);
 
     const prediction = model.predict([noise]).squeeze();
@@ -23,6 +23,7 @@ async function generate() {
     await tf.browser.toPixels(prediction.mul(tf.scalar(0.5)).add(tf.scalar(0.5)), canvas);
 }
 
+window.generate = generate;
 
 document.querySelector('button').addEventListener('click', () => {
     generate();
