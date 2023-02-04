@@ -35,21 +35,13 @@ module.exports = function(env, argv) {
     module: {
       rules: [
         {
-          test: /\.(html)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-            },
-          ],
-        },
-        {
-            test: /(static)*\.(html|bin)$/i,
+            test: /(static)*\.(html|bin|json)$/i,
             use: [
               {
                 loader: 'file-loader',
               },
             ],
-          },
+          }
       ],
     }
   };
