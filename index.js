@@ -5,7 +5,8 @@ if (module.hot) {
 }
 
 async function generate() {
-    model = await tf.loadLayersModel('model.json');
+    if (!model) model = await tf.loadLayersModel('model.json');
+    
     noise = tf.randomNormal([1, 50]);
 
     const prediction = model.predict([noise]).squeeze();
