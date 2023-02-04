@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/LyuboslavLyubenov/DCGAN-greeting-cards#readme",
   "dependencies": {
-    "@tensorflow/tfjs": "^4.2.0",
-    "@tensorflow/tfjs-core": "^4.2.0"
+    "@tensorflow/tfjs": "2.8.5"
   },
   "devDependencies": {
     "buffer": "^5.7.1",
